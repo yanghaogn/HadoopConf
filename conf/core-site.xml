@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+<property>
+<name>fs.default.name</name>
+<value>hdfs://sist21:8000</value>
+<final>true</final>
+</property>
+
+<property>
+<name>hadoop.tmp.dir</name>
+<value>/usr/local/hadoop/tmp</value>
+<final>true</final>
+</property>
+
+<property>
+<name>dfs.name.dir</name>
+<value>/usr/local/hadoop/dfs.name.dir</value>
+<final>true</final>
+</property>
+
+
+<property>
+<name>dfs.data.dir</name>
+<value>/usr/local/hadoop/dfs.data.dir</value>
+<final>true</final>
+</property>
+
+<property>
+<name>fs.checkpoint.dir</name>
+<value>/usr/local/hadoop/dfs.checkpoint.dir</value>
+<final>true</final>
+</property>
+</configuration>
