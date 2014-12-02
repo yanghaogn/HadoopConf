@@ -18,9 +18,9 @@
 
 <configuration>
 <property>
-	  <name>mapreduce.framework.name</name>
-　　	<value>yarn</value>
-    <description>The runtime framework for executing MapReduce jobs.Can be one of local, classic or yarn.</description>
+  <name>mapreduce.framework.name</name>
+　<value>yarn</value>
+  <description>The runtime framework for executing MapReduce jobs.Can be one of local, classic or yarn.</description>
 </property> 
 
 <property>
@@ -68,9 +68,9 @@
 </property>
 
 <property>
-    <name>mapreduce.jobtracker.heartbeat.interval.min</name>
-    <value>10</value>
-    <description>调节TaskTracker-to-JobTracker心跳的最小间隔到一个较小的值,可能会改善MapReduce小型集群性能</description>
+    <name>mapreduce.jobtracker.heartbeats.in.second</name>
+    <value>100</value>
+    <description>Expert: Approximate number of heart-beats that could arrive at JobTracker in a second. Assuming each RPC can be processed in 10msec, the default value is made 100 RPCs in a second.调节TaskTracker-to-JobTracker心跳的最小间隔到一个较小的值,可能会改善MapReduce小型集群性能</description>
 </property>
 
 <property>
