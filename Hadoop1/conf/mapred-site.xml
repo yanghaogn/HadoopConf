@@ -4,47 +4,56 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-<property>
-<name>mapred.job.tracker</name>
-<value>sist21:8001</value>
-</property>
+  <property>
+    <name>mapred.job.tracker</name>
+    <value>sist21:8001</value>
+  </property>
+  
+  <property>   
+    <name>mapred.hosts</name>   
+    <value>/usr/local/hadoop1/hadoop-1.2.1/conf/mr_include</value>  
+  </property>  
+   
+  <property>   
+    <name>mapred.hosts.exclude</name>   
+    <value>/usr/local/hadoop1/hadoop-1.2.1/conf/mr_exclude</value>  
+  </property> 
+    
+  <property>
+    <name>mapred.task.timeout</name>
+    <value>600000</value>
+  </property>
 
-<property>
-	<name>mapred.task.timeout</name>
-	<value>600000</value>
-</property>
+<!--
+  <property>
+    <name>mapred.child.java.opts</name>
+    <value>-Xmx3500m -Xms3500m -Xmn2200m</value>
+    <description></description>
+  </property>
+-->
+  <property>
+    <name>mapred.local.tracker</name>
+    <value>/usr/local/hadoop1/mapred.local.tracker</value>
+  </property>
 
-<property>
-  <name>mapred.child.java.opts</name>
-  <value>-Xmx3500m -Xms3500m -Xmn2200m</value>
-  <description></description>
-</property>
+  <property>
+    <name>mapred.local.dir</name>
+    <value>/usr/local/hadoop1/mapred.local.dir</value>
+  </property>
 
-<property>
-<name>mapred.local.tracker</name>
-<value>/usr/local/hadoop/mapred.local.tracker</value>
+  <property>
+    <name>mapred.tasktracker.map.tasks.maximum</name>
+    <value>2</value>
+  </property>
+  
+  <property>
+    <name>mapred.tasktracker.reduce.tasks.maximum</name>
+    <value>1</value>
+  </property>
 
-</property>
-
-<property>
-<name>mapred.local.dir</name>
-<value>/usr/local/hadoop/mapred.local.dir</value>
-
-</property>
-
-<property>
-<name>mapred.tasktracker.map.tasks.maximum</name>
-<value>2</value>
-</property>
-
-<property>
-<name>mapred.tasktracker.reduce.tasks.maximum</name>
-<value>1</value>
-</property>
-
-<property>
-<name>mapred.system.dir</name>
-<value>/usr/local/hadoop/mapred.system.dir</value>
-</property>
+  <property>
+    <name>mapred.system.dir</name>
+    <value>/usr/local/hadoop1/mapred.system.dir</value>
+  </property>
 
 </configuration>

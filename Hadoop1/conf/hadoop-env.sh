@@ -6,7 +6,7 @@
 # remote nodes.
 
 # The java implementation to use.  Required.
- export JAVA_HOME=/usr/local/jdk1.7.0_45
+ export JAVA_HOME=/usr/local/jdk
 
 # Extra Java CLASSPATH elements.  Optional.
 # export HADOOP_CLASSPATH=
@@ -15,7 +15,7 @@
 export HADOOP_HEAPSIZE=3000
 
 # Extra Java runtime options.  Empty by default.
-# export HADOOP_OPTS="-XX:+UseParallelGC -mx8g"
+# export HADOOP_OPTS=-server
 
 # Command specific options appended to HADOOP_OPTS when specified
 export HADOOP_NAMENODE_OPTS="-Dcom.sun.management.jmxremote $HADOOP_NAMENODE_OPTS"
@@ -45,6 +45,9 @@ export HADOOP_JOBTRACKER_OPTS="-Dcom.sun.management.jmxremote $HADOOP_JOBTRACKER
 # export HADOOP_SLAVE_SLEEP=0.1
 
 # The directory where pid files are stored. /tmp by default.
+# NOTE: this should be set to a directory that can only be written to by 
+#       the users that are going to run the hadoop daemons.  Otherwise there is
+#       the potential for a symlink attack.
 # export HADOOP_PID_DIR=/var/hadoop/pids
 
 # A string representing this instance of hadoop. $USER by default.
