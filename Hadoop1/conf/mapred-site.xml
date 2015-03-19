@@ -9,6 +9,11 @@
     <value>sist21:8001</value>
   </property>
   
+  <property>
+    <name>mapred.reduce.slowstart.completed.maps</name>
+    <value>1</value>
+  </property>
+  
   <property>   
     <name>mapred.hosts</name>   
     <value>/usr/local/hadoop1/hadoop-1.2.1/conf/mr_include</value>  
