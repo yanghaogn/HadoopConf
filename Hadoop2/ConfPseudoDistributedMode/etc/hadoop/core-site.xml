@@ -36,9 +36,10 @@
     <name>io.file.buffer.size</name>
     <value>131072</value>
   </property>
-  <!--开启HDFS的LZO压缩-->
+  <!--开启HDFS的LZO压缩
   <property>
      <name>io.compression.codecs</name>
      <value>org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.SnappyCodec</value>
   </property>
+  -->
 </configuration>
