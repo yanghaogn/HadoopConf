@@ -28,18 +28,18 @@
     <name>mapreduce.job.reduce.slowstart.completedmaps</name>
     <value>1</value>
   </property>
-
+  <!--The directory relative to fs.default.name where shared files are stored during a job run.-->
   <property>
     <name>mapred.system.dir</name>
-    <value>/usr/local/hadoop-2/mapred.system.dir</value>
+    <value>hdfs://localhost:8020/usr/local/hadoop-2/mapred.system.dir</value>
   </property> 
-	 
+  <!--A list of directories where MapReduce stores intermediate data for jobs. The data is cleared out when the job ends.-->
   <property>
     <name>mapred.local.dir</name>
-    <value>/usr/local/hadoop-2/mapred.local.dir</value>
+    <value>file:///usr/local/hadoop-2/mapred.local.dir</value>
   </property> 
 
-<!-- jobhistory properties -->
+  <!-- jobhistory properties -->
   <property>
     <name>mapreduce.jobhistory.address</name>
     <value>localhost:10020</value>
@@ -82,6 +82,12 @@
     <description>Expert: Approximate number of heart-beats that could arrive at JobTracker in a second. Assuming each RPC can be processed in 10msec, the default value is made 100 RPCs in a second.调节TaskTracker-to-JobTracker心跳的最小间隔到一个较小的值,可能会改善MapReduce小型集群性能</description>
   </property>
 
+   <!--Fraction of the number of maps in the job which should be complete before reduces are scheduled for the job.-->
+   <property>
+    <name>mapreduce.job.reduce.slowstart.completedmaps</name>
+    <value>0.80</value>
+  </property>
+  
   <property>
     <name>hadoop.proxyuser.mapred.groups</name>
     <value>*</value>
@@ -95,17 +101,28 @@
   </property>
 
   <property>
-    <name>mapred.map.child.java.opts</name>
-    <value>-Xmx1024m</value>
+    <name>mapreduce.map.memory.mb</name>
+    <value>1536</value>
   </property>
-
-  <property>
-    <name>mapred.reduce.child.java.opts</name>
-    <value>-Xmx2048m</value>
-  </property>
-
   <property>
     <name>mapreduce.reduce.memory.mb</name>
-    <value>2048</value>
+    <value>3072</value>
+  </property>
+  <property>
+    <name>mapreduce.map.java.opts</name>
+    <value>-Xmx1024m</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.java.opts</name>
+    <value>-Xmx2048m</value>
+  </property>
+  <!--admin 端的JVM配置，如果和用户的jvm参数设置成一样的话，会覆盖用户的jvm参数-->
+  <property>
+    <name>mapreduce.admin.map.child.java.opts</name>
+    <value>-Djava.net.preferIPv4Stack=true</value>
+  </property>
+  <property>
+    <name>mapreduce.admin.reduce.child.java.opts</name>
+    <value>-Djava.net.preferIPv4Stack=true</value>
   </property>
 </configuration>

@@ -31,10 +31,16 @@
     <name>hadoop.tmp.dir</name>
     <value>/usr/local/hadoop-2/tmp</value>
   </property>
-  <!--The size of buffer for use in sequence files. The size of this buffer should probably be a multiple of hardware page size (4096 on Intel x86), and it determines how much data is buffered during read and write operations.-->
+  <!--(单位：字节)The size of buffer for use in sequence files. The size of this buffer should probably be a multiple of hardware page size (4096 on Intel x86), and it determines how much data is buffered during read and write operations.-->
   <property>
     <name>io.file.buffer.size</name>
     <value>131072</value>
+  </property>
+  <!--文件删除后存活时间（分钟）Number of minutes after which the checkpoint gets deleted. If zero, the trash feature is disabled. This option may be configured both on the server and the client. If trash is disabled server side then the client side configuration is checked. If trash is enabled on the server side then the value configured on the server is used and the client configuration value is ignored.
+-->
+  <property>
+    <name>fs.trash.interval</name>
+    <value>10080</value>
   </property>
   <!--开启HDFS的LZO压缩
   <property>
