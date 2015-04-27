@@ -125,4 +125,9 @@
     <name>mapreduce.admin.reduce.child.java.opts</name>
     <value>-Djava.net.preferIPv4Stack=true</value>
   </property>
+  <!--优先运行用户的java程序-->
+  <property>
+    <name>mapreduce.job.user.classpath.first</name>
+    <value>true</value>
+  </property>
 </configuration>

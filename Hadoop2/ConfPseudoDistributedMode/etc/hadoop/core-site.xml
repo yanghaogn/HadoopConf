@@ -22,11 +22,6 @@
     <value>hdfs://localhost:8020</value>
     <description>The name of the default file system.  A URI whose  scheme and authority determine the FileSystem implementation.  The uri's scheme determines the config property (fs.SCHEME.impl) naming the FileSystem implementation class.  The uri's authority is used to determine the host, port, etc. for a filesystem.</description>
   </property>
-  <!-->垃圾保存一天-->
-  <property>
-    <name>fs.trash.interval</name>
-    <value>1440</value>
-  </property>
   <property>
     <name>hadoop.tmp.dir</name>
     <value>/usr/local/hadoop-2/tmp</value>
