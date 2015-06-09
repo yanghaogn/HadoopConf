@@ -118,6 +118,13 @@
     <value>10</value>
   </property>
 
+  <!--Assume the jhs address is localhost:19888-->
+  <property>
+      <name>yarn.log.server.url</name>
+      <value>http://localhost:19888/jobhistory/logs</value>
+      <description> 将日志聚集在HDFS上 </description>
+  </property>
+  
   <property>
       <name>yarn.log-aggregation-enable</name>
       <value>true</value>
